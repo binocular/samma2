@@ -1,0 +1,64 @@
+---
+// Reemplazar con fotos reales de Unsplash. Mantener coherencia: verde sage,
+// crema, luz cálida, materiales naturales, sin rostros corporativos.
+//
+// Búsquedas sugeridas:
+//   1. "spa treatment room green wall plants"          (estetica3)
+//   2. "linen towel rolled basket olive branch"        (estetica6)
+//   3. "massage table neutral beige minimal"           (estetica5)
+//   4. "candles ceramic spa still life sage"
+const photos = [
+  {
+    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    alt: "Sala de tratamiento",
+    span: "md:col-span-2 md:row-span-2",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=80",
+    alt: "Detalles del espacio",
+    span: "",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=900&q=80",
+    alt: "Aceites y aromaterapia",
+    span: "",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1532926381893-7542290edf1d?auto=format&fit=crop&w=900&q=80",
+    alt: "Toallas y elementos del espacio",
+    span: "",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=900&q=80",
+    alt: "Velas y ambiente",
+    span: "",
+  },
+];
+---
+
+<section id="espacio" class="py-24 md:py-36 bg-[var(--color-bone)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="label-eyebrow">— El espacio</span>
+      <h2 class="mt-6 text-4xl md:text-5xl">Un lugar para soltar.</h2>
+      <span class="divider-brass mt-8"></span>
+      <p class="mt-8 text-[var(--color-forest-deep)]/75 leading-relaxed">
+        Diseñamos cada rincón para que apenas cruces la puerta sientas que entras a otra
+        velocidad. Luz cálida, materiales naturales y silencio.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 reveal">
+      {photos.map((photo) => (
+        <div class={`overflow-hidden rounded-sm ${photo.span}`}>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            style="min-height: 220px;"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

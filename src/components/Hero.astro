@@ -1,0 +1,60 @@
+---
+// Reemplazar con foto real de Unsplash:
+//   keywords: "massage treatment room green sage interior natural light"
+//   referencia visual: estetica1.jpeg / estetica3.jpeg / estetica5.jpeg
+const heroImage =
+  "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=2000&q=80";
+---
+
+<section id="top" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Imagen de fondo -->
+  <div class="absolute inset-0">
+    <img
+      src={heroImage}
+      alt="Sala de tratamiento Samma"
+      class="w-full h-full object-cover"
+    />
+    <!-- Overlay verde para legibilidad y tono -->
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(135deg, rgba(26,40,32,0.85) 0%, rgba(45,74,62,0.65) 50%, rgba(26,40,32,0.75) 100%);"
+    >
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-32 pb-24 w-full">
+    <div class="max-w-2xl reveal">
+      <span class="label-eyebrow text-[var(--color-brass-soft)]">
+        — Centro de masoterapia
+      </span>
+      <h1 class="mt-6 text-5xl md:text-6xl lg:text-7xl text-[var(--color-bone)] leading-[1.05]">
+        Bienestar terapéutico<br />en el corazón<br />
+        <em class="not-italic text-[var(--color-brass-soft)]">de Las Condes.</em>
+      </h1>
+      <p class="mt-8 text-lg text-[var(--color-bone)]/85 max-w-xl font-light leading-relaxed">
+        Un espacio sereno donde la técnica clínica se encuentra con la calma.
+        Tratamientos pensados para que tu cuerpo descanse, se recupere y vuelva a su equilibrio.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#contacto" class="btn-primary" style="background: var(--color-bone); color: var(--color-forest);">
+          Reservar una sesión
+        </a>
+        <a
+          href="https://wa.me/56987390802"
+          target="_blank"
+          rel="noopener"
+          class="btn-outline"
+          style="border-color: var(--color-bone); color: var(--color-bone);"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicador de scroll -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-bone)]/60 text-xs tracking-[0.3em] uppercase">
+    Desliza ↓
+  </div>
+</section>

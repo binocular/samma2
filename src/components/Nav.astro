@@ -1,0 +1,33 @@
+---
+const links = [
+  { href: "#sobre", label: "Sobre Samma" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#espacio", label: "Espacio" },
+  { href: "#visitanos", label: "Visítanos" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="absolute top-0 left-0 right-0 z-30">
+  <nav class="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <img src="/logo.jpeg" alt="Samma" class="w-10 h-10 rounded-full object-cover" />
+      <span class="font-serif text-xl text-[var(--color-bone)] tracking-wide">Samma</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm text-[var(--color-bone)]/90 font-light tracking-wide">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class="hover:text-[var(--color-brass-soft)] transition-colors">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a
+      href="#contacto"
+      class="hidden md:inline-block text-xs uppercase tracking-[0.2em] text-[var(--color-bone)] border border-[var(--color-bone)]/40 rounded-full px-5 py-2.5 hover:bg-[var(--color-bone)] hover:text-[var(--color-forest)] transition-colors"
+    >
+      Reservar
+    </a>
+  </nav>
+</header>

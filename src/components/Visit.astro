@@ -1,0 +1,57 @@
+---
+const horarios = [
+  { dias: "Lunes a Viernes", horas: "10:00 — 20:00" },
+  { dias: "Sábados y Domingos", horas: "10:00 — 17:00" },
+];
+
+const direccion = "Av. Manquehue Sur 520, Las Condes";
+const mapsQuery = encodeURIComponent(direccion);
+---
+
+<section id="visitanos" class="py-24 md:py-36 bg-[var(--color-cream)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-start">
+    <div class="reveal">
+      <span class="label-eyebrow">— Visítanos</span>
+      <h2 class="mt-6 text-4xl md:text-5xl leading-tight">Estamos en Las Condes.</h2>
+      <span class="divider-brass mt-8"></span>
+
+      <div class="mt-10 space-y-8 text-[var(--color-forest-deep)]/85">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-brass)] mb-2">Dirección</p>
+          <p class="font-serif text-2xl text-[var(--color-forest)]">{direccion}</p>
+        </div>
+
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-brass)] mb-3">Horarios</p>
+          <ul class="space-y-2">
+            {horarios.map((h) => (
+              <li class="flex justify-between border-b border-[var(--color-sage)]/30 pb-2 max-w-sm">
+                <span>{h.dias}</span>
+                <span class="font-serif text-[var(--color-forest)]">{h.horas}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-brass)] mb-2">Contacto</p>
+          <p>
+            <a href="https://wa.me/56987390802" class="hover:text-[var(--color-brass)] transition-colors">
+              +56 9 8739 0802
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <iframe
+        title="Mapa Samma"
+        src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-full h-[520px] rounded-sm border border-[var(--color-sage)]/30"
+      ></iframe>
+    </div>
+  </div>
+</section>

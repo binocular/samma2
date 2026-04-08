@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────── */
+@theme {
+  /* paleta */
+  --color-forest: #2d4a3e;       /* verde principal del logo */
+  --color-forest-deep: #1a2820;  /* casi-negro para texto */
+  --color-sage: #8fa896;         /* verde sage secundario */
+  --color-sage-soft: #c4d1c4;    /* sage muy claro */
+  --color-cream: #f5f0e6;        /* fondo cálido */
+  --color-bone: #faf8f3;         /* off-white */
+  --color-brass: #b8956a;        /* acento dorado/latón */
+  --color-brass-soft: #d4b896;
+
+  /* tipografía */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bone);
+    color: var(--color-forest-deep);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--color-forest);
+  }
+
+  ::selection {
+    background: var(--color-forest);
+    color: var(--color-cream);
+  }
+}
+
+/* ─── Helpers ───────────────────────────────────────────── */
+@layer components {
+  .label-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+
+  .divider-brass {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--color-brass);
+    vertical-align: middle;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    background: var(--color-forest);
+    color: var(--color-bone);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: var(--color-forest-deep);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--color-forest);
+    color: var(--color-forest);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .btn-outline:hover {
+    background: var(--color-forest);
+    color: var(--color-bone);
+  }
+}
+
+/* ─── Reveal-on-scroll animation ────────────────────────── */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
