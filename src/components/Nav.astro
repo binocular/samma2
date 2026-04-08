@@ -10,9 +10,10 @@ const links = [
 
 <header class="absolute top-0 left-0 right-0 z-30">
   <nav class="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-3">
-      <img src="/logo.jpeg" alt="Samma" class="w-10 h-10 rounded-full object-cover" />
-      <span class="font-serif text-xl text-[var(--color-bone)] tracking-wide">Samma</span>
+    <a href="#top" class="group">
+      <span class="font-serif text-2xl text-[var(--color-bone)] tracking-[0.25em] uppercase group-hover:text-[var(--color-brass-soft)] transition-colors">
+        Samma
+      </span>
     </a>
     <ul class="hidden md:flex items-center gap-8 text-sm text-[var(--color-bone)]/90 font-light tracking-wide">
       {links.map((link) => (
